@@ -4,13 +4,30 @@
 </style>
 <script>
 	function toggleMode() {
+		// Afficher ou Cacher les contrôles d'édition :
+		// associer une classe "controle" aux objets correspondants
+		$(".controle").toggle();  
+	}
+	
+	function add(refBtnClique) {
+		// refBtnClique <=> référence JS 
+		// Obtenir une référence jBtnClique sur le bouton cliqué : 
+		jBtnClique = $(refBtnClique); 
+		
+		// Localiser le bouton cliqué : tester si ref is (le premier)
+		// $("input[value='+']").index(jBtnClique) => 0 ou 1 
+		
+		// Récupérer le texte situé avant le bouton cliqué 
+		// => jBtnClique.prev()
+		// Insérer en haut à l'intérieur du #contenu : .prepend()
+		// ou en bas : .append() 
 	}
 </script>
 
 <body>
 	<input type="button" onclick="toggleMode()" value="Passer en mode édition"/>
 	<input type="text"/>
-	<input type="button" onclick="add()" value="+"/>
+	<input type="button" onclick="add(this)" value="+"/>
 
 	<div id="contenu">
 		<p>p1</p>
@@ -20,6 +37,6 @@
 	
 	<input type="button" onclick="toggleMode()" value="Passer en mode édition"/>
 	<input type="text"/>
-	<input type="button" onclick="add()" value="+"/>
+	<input type="button" onclick="add(this)" value="+"/>
 </body>
 
