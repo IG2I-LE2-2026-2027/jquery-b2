@@ -1,0 +1,32 @@
+<script src="jquery.js"></script>
+<style>
+	.allume {background-color:yellow;}
+	.exemple {display:none;}
+</style>
+<script>
+	function decollage() {
+		// $ <=> alias pour la fonction jQuery
+		
+		// $("selecteur CSS")
+		// renvoie une collection de références jquery
+		
+		// Les méthodes s'appliquent souvent à tous les éléments de la collection 
+		
+		// les méthodes renvoient le plus souvent la collection ! ==> On peut cascader les appels !
+		
+		$("p")
+			.addClass("allume")
+			.show("slow");
+	}
+</script>
+
+<body>
+	<input type="button" onclick="decollage()" value="GO"/>
+	<p class="exemple"> P1 </p>
+	<p class=""> P2 </p>
+	<p class="exemple"> P3 </p>
+	<div class="exemple"> div1 </div>
+	<div class=""> div2 </div>
+	<div class="exemple"> div3 </div>
+</body>
+
