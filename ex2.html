@@ -3,13 +3,34 @@
 
 </style>
 <script>
-	function ?() {
-	
+	function toggle() {
+		$("#contenu").toggle("slow", function(){
+			// changer texte 
+			// 1) capturer les boutons 'Cacher/Afficher'
+			// 2) attribuer la bonne chaine 
+			
+			// tester visibilité du #contenu
+			// if ($("#contenu").is(":visible")) {
+			
+			// récupérer premier bouton, tester sa valeur 
+			// if ($("input:first").val() == "Afficher") {
+			// if ($("input").first().val() == "Afficher") {
+			
+			// tester l'existence d'un bouton 'Afficher'
+			// ==> tester la taille de la collection 
+			if ($("input[value='Afficher']").length >0) {
+				// Cacher 
+				$("input[value='Afficher']").val("Cacher");
+			} else {
+				// Afficher 
+				$("input[value='Cacher']").val("Afficher");
+			}
+		});
 	}
 </script>
 
 <body>
-	<input type="button" onclick="?()" value="Cacher"/>
+	<input type="button" onclick="toggle()" value="Cacher"/>
 
 	<div id="contenu">
 		<p>p1</p>
@@ -17,6 +38,6 @@
 		<p>p3</p>
 	</div>
 	
-	<input type="button" onclick="?()" value="Cacher"/>
+	<input type="button" onclick="toggle()" value="Cacher"/>
 </body>
 
